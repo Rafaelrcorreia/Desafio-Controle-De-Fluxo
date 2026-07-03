@@ -10,14 +10,14 @@ public class Contador {
 
         try{
             contar(parametroUm, parametroDois);
-        }catch (ParametroInvalidoException e){
+        }catch (ParametrosInvalidosException e){
             System.out.println("Erro: " + e.getMessage());
         }
     }
 
-    static void contar(int parametroUm, int parametroDois ) throws ParametroInvalidoException{
+    static void contar(int parametroUm, int parametroDois ) throws ParametrosInvalidosException {
         if (parametroUm > parametroDois){
-            throw new ParametroInvalidoException("O primeiro número deve ser menor que o segundo");
+            throw new ParametrosInvalidosException("O segundo parâmetro deve ser maior que o primeiro");
         }
         int contagem = parametroDois - parametroUm;
         for (int i = 1; i <= contagem; i++ ){
